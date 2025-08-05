@@ -70,31 +70,6 @@ attacker = xxxAttacker(train_models: List[nn.Module])
 ```
 You can initialize attacker like this.
 
-### Examples
-Here is an example of testing attack success rate on NIPS17 loader.
-```python
-from models import resnet18, Wong2020Fast, Engstrom2019Robustness, BaseNormModel, Identity
-from attacks import MI_CommonWeakness
-attacker = MI_CommonWeakness([
-    BaseNormModel(resnet18(pretrained=True)), # model that requires normalization
-    Identity(Wong2020Fast(pretrained=True)) # model that do not need normalization
-])
-
-from tester import test_transfer_attack_acc
-from data import get_NIPS17_loader
-test_transfer_attack_acc(attacker, 
-                         get_NIPS17_loader(), 
-                         [
-                             Identity(Wong2020Fast(pretrained=True)), # white box attack
-                             Identity(Engstrom2019Robustness(pretrained=True)), # transfer attack
-                          ]
-                         )
-```
-
-
-For more example codes, please visit *'./experiments'* folder. There are some example codes using our framework to attack and draw landscapes. I believe you can quickly get familiar with our framework via these example codes.
-
-
 ### HRNet
 HRNet is a function that aims to reduce memory cost when crafting adversarial examples.
 
