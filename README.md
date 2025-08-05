@@ -97,16 +97,3 @@ model = change(model)
 
 ---
 
-## Citation
-Please cite us:
-```
-@article{chen2023rethinking,
-  title={Rethinking Model Ensemble in Transfer-based Adversarial Attacks},
-  author={Chen, Huanran and Zhang, Yichi and Dong, Yinpeng and Zhu, Jun},
-  journal={arXiv preprint arXiv:2303.09105},
-  year={2023}
-}
-```
-
-If you have any question, you can contact us by:   
-Email: huanran_chen@outlook.com, huanranchen@bit.edu.cn    
