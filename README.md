@@ -1,13 +1,9 @@
-# Adversarial Attacks
-
+# SAI-FGSM implementation
 ---
-# MASK implementation
+We reconsider the generation of adversarial examples as a search problem within the neighborhood of the real example. Inspired by the effectiveness of heuristic search methods in finding global optima, we propose the Simulated Annealing Iterative Fast Gradient Sign Method (SAI-FGSM), which leverages the principle of thermal annealing and the Metropolis–Hastings acceptance criterion to escape local minima and saddle points, thereby significantly increasing the probability of discovering global optima.
 
-MASK leverages word embeddings as bridges to associate words with their corresponding prototypes, thereby enabling semantic knowledge alignment between the image and text modalities.
+<img width="1209" height="807" alt="image" src="https://github.com/user-attachments/assets/6c9a2d22-519e-4212-a327-c99862008f19" />
 
-<img width="1230" height="1168" alt="image" src="https://github.com/user-attachments/assets/b31a61d7-056c-4ad7-b5a4-3dd9aede1cc7" />
-
-<img width="1372" height="913" alt="image" src="https://github.com/user-attachments/assets/cc1a53c1-35ac-426d-bf4f-24d871e314fd" />
 
 # Datasets and Metrics
 We test the performance of MASK on two standard benchmark datasets: Flickr30k and MSCOCO.
