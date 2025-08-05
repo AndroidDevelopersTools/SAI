@@ -5,21 +5,19 @@ We reconsider the generation of adversarial examples as a search problem within 
 <img width="1209" height="807" alt="image" src="https://github.com/user-attachments/assets/6c9a2d22-519e-4212-a327-c99862008f19" />
 
 
-# Datasets and Metrics
-We test the performance of MASK on two standard benchmark datasets: Flickr30k and MSCOCO.
-The image-text matching usually includes two sub-tasks in terms of: 1) image annotation: retrieving related texts given images, and 2) image retrieval: retrieving related images given texts. 
-The commonly used evaluation criterions are ``R@1", ``R@5" and ``R@10", i.e., recall rates at the top-1, 5 and 10 results. Following existing works, we also use an additional criterion of ``Rs" by summing all the recall rates to evaluate the overall performance.
+# Setting
+We choose 1000 images belonging to the 1000 categories from ILSVRC 2012 validation set, which are almost correctly classified by all the testing models. 
 
 
-# Implementation Details
-In the multimodal aligned semantic knowledge, we collect all words from the VG dataset and filter out some special characters and rare words, resulting in a total of $K$=12,385 semantic concepts. For each image, we initially employ the pre-trained object detection model Bottom-UP Top-Down  \footnote{https://github.com/MILVLG/bottom-up-attention.pytorch} to extract raw region representations, setting the number of detected regions to $I$=36 and the dimensionality of each region representation to $M$=2048. 
-For each word, we obtain its word embedding using the pre-trained word vectors glove-twitter-50 \footnote{https://nlp.stanford.edu/projects/glove/}. 
-The batch size is 4096 for the first 200 epochs and 2048 for the next 200 epochs. The trade-off factors $\lambda_1$ and $\lambda_2$ are set to 3. We use the Adam to optimize the loss with a learning rate of 1e-4.
-
+All the images are resized to 224 $\times$ 224 and the number of iterations is fixed to 10. The temperature drops from 10 to 0.5 for all models and the perturbation $\varepsilon$ is set to 0.03. We compare our approach with MI, DI, TI, VMI, PAM, and two state-of-the-art methods BSR and VMI-CWA. We choose five normally trained models - AlexNet, VGG-16, ResNet-101, ShuffleNet-V2, MobileNet-V3 from TorchVision and two adversarially trained models - ResNet-50, XCiT-S12 from RobustBench. They contain both normal and robust models, which is effective to evaluate the transferability of algorithms to black-box models with attack success rate(ASR).
 
 
 # Result
-<img width="1457" height="1060" alt="image" src="https://github.com/user-attachments/assets/2d41e99d-8ff0-4a1e-9b52-afc16eddaf3f" />
+<img width="1171" height="1143" alt="image" src="https://github.com/user-attachments/assets/6466d0dc-71b2-4ec0-9919-ea9fba505150" />
+
+<img width="1182" height="853" alt="image" src="https://github.com/user-attachments/assets/b19ebc57-776b-4477-91cd-7f62fd88683d" />
+
+
 
 ## Install
 ### Environment
