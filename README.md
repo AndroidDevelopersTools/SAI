@@ -28,9 +28,7 @@ pip install requirements.txt
 
 
 ### Data
-**CIFAR10** will be downloaded automatically    
-For **PACS** dataset, please refer to ./data/PACS.py for install    
-For **NIPS17** dataset, you can run \
+You can run \
 ```bash
 kaggle datasets download -d google-brain/nips-2017-adversarial-learning-development-set
 ```
@@ -47,7 +45,7 @@ We also encapsulate some models and defenses in *"./models"* and *"./defenses"*.
 
 ### Code Framework
 
-> attacks: Some attack algorithms. Including VMI, VMI-CW, CW, SAM, etc.      
+> attacks: Some attack algorithms. Including MI, DI, TI, VMI, PAM, BSR, VMI-CW etc.      
 > data: loader of CIFAR, NIPS17, PACS    
 > defenses: Some defenses algorithm    
 > experiments: Example codes    
